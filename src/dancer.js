@@ -8,6 +8,9 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.left = left;
   this.topVelocity = 2 * (Math.random() < 0.5 ? -1 : 1);
   this.leftVelocity = 2 * (Math.random() < 0.5 ? -1 : 1);
+  this.radius = 20 + Math.random()*30;
+  this.growthSpeed = 0.01; //Math.random()*2;
+  this.grow = true;
   this.step();
 
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
@@ -46,6 +49,29 @@ makeDancer.prototype.setPosition = function(top, left) {
   var styleSettings = {
     top: top,
     left: left
+  };
+  this.$node.css(styleSettings);
+};
+
+makeDancer.prototype.changeSize = function(){
+  
+  if (this.radius <= 50 && this.grow){
+    this.radius += this.growthSpeed;  
+  } else if (this.radius > 50){
+    this.grow = false;
+  }
+
+  if (!this.grow){
+    this.radius -= this.growthSpeed;
+  }
+  if (this.radius <= 30){
+    this.grow = true;  
+  }
+
+
+  var styleSettings = {
+    'border-width': this.radius,
+    'border-radius': this.radius
   };
   this.$node.css(styleSettings);
 };
