@@ -3,8 +3,15 @@ var SolidDancer = function(top, left, timeBetweenSteps){
   this.$node.addClass('solid-dancer');
   //blue,red,green
   this.colors = ['#4993E2', '#EC3630', '#6AD97E'];
+  var size = Math.random() * 10 + 70;
   var currentColor = this.colors[Math.floor(Math.random() * 3)];
-  this.$node.css({'color': currentColor, 'background-color': currentColor});
+  this.$node.css({
+    'color': currentColor,
+    'background-color': currentColor,
+    height: size,
+    width: size,
+    'border-raidus': size,
+  });
   window.solidDancers.push(this);
 };
 
@@ -26,7 +33,7 @@ SolidDancer.prototype.checkCollision = function(OtherDancer) {
   var yDistance = this.top - OtherDancer.top;
 
   var totalDistance = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
-  if (totalDistance < 80) {
+  if (totalDistance < 40) {
     return true;
   } else {
     return false;
