@@ -24,9 +24,20 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
-      Math.random() * 1000
+      Math.random() * 50
     );
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
+  });
+
+  $('.lineUpButton').on('click', function(event) {
+    // line up 
+    var horizPos = $("body").width() / window.dancers.length;
+    var mid = $("body").height()/2;
+    for (var i = 0; i < window.dancers.length; i++) {
+      var dancer = window.dancers[i];
+      dancer.setPosition(mid, i * horizPos);
+    }
   });
 });
 

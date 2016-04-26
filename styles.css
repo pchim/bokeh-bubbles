@@ -24,4 +24,15 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+  box-shadow: 
+}
+
+.solid-dancer{
+  border:20px solid blue;
+  border-radius:20px;
+}
+
+.clear-dancer{
+  border:30px solid yellow;
+  border-radius:30px;
 }

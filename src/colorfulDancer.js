@@ -12,7 +12,6 @@ colorfulDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
   this.currentColor = (this.currentColor + 1) % 3;
   var color = this.colors[this.currentColor];
-  console.log(color);
   var styleSettings = {
     'border-color': color,
   };
