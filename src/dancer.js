@@ -6,8 +6,8 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.$node = $('<div class="dancer"></div>');
   this.top = top;
   this.left = left;
-  this.topVelocity = 2;
-  this.leftVelocity = 2;
+  this.topVelocity = 2 * (Math.random() < 0.5 ? -1 : 1);
+  this.leftVelocity = 2 * (Math.random() < 0.5 ? -1 : 1);
   this.step();
 
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote

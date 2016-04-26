@@ -1,6 +1,10 @@
 var SolidDancer = function(top, left, timeBetweenSteps){
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('solid-dancer');
+  //blue,red,green
+  this.colors = ['#4993E2', '#EC3630', '#6AD97E'];
+  var currentColor = this.colors[Math.floor(Math.random() * 3)];
+  this.$node.css({'color': currentColor, 'background-color': currentColor});
   window.solidDancers.push(this);
 };
 

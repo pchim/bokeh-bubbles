@@ -31,10 +31,10 @@ body, a:link, a:visited, a:active{
   /*border:20px solid blue;*/
   height: 80px;
   width: 80px;
-  box-shadow: 0 0 20px 5px #FC9D31;
-  background-color: #FC9D31;
+  box-shadow: 0 0 20px 5px;
+/*  background-color: #0DAAB9;*/
   border-radius:80px;
-  opacity: 0.9;
+  opacity: 0.75;
 }
 
 .clear-dancer{

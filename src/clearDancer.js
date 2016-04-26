@@ -2,7 +2,6 @@
 var ClearDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('clear-dancer');
-
   this.setHover();
 };
 
