@@ -6,3 +6,7 @@ var ClearDancer = function(top, left, timeBetweenSteps) {
 
 ClearDancer.prototype = Object.create(makeDancer.prototype);
 ClearDancer.prototype.constructor = ClearDancer;
+ClearDancer.prototype.step = function(){
+	makeDancer.prototype.step.call(this);
+	this.changeSize();
+}
