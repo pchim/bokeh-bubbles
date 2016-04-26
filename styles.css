@@ -35,4 +35,5 @@ body, a:link, a:visited, a:active{
 .clear-dancer{
   border:30px solid yellow;
   border-radius:30px;
+  opacity: 0.3;
 }
