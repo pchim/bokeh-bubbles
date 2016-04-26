@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#000000;
+  background:linear-gradient(to bottom right, #F1B66A, #5C3C51);
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -21,20 +21,34 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+/*  border:10px solid red;*/
   border-radius:10px;
   position:absolute;
   box-shadow: 
 }
 
 .solid-dancer{
-  border:20px solid blue;
-  border-radius:20px;
+  /*border:20px solid blue;*/
+  height: 80px;
+  width: 80px;
+  box-shadow: 0 0 20px 5px;
+/*  background-color: #0DAAB9;*/
+  border-radius:80px;
+  opacity: 0.75;
 }
 
 .clear-dancer{
-  border:30px solid yellow;
-  border-radius:30px;
+/*  border:30px solid yellow;*/
+  height: 200px;
+  width: 200px;
+  background-color: #e6e6e6;
+  box-shadow: 0 0 20px 5px #e6e6e6;
+  border-radius:200px;
+  opacity: 0.3;
+}
+
+.solid-dancer + .clear-dancer {
+  opacity: 1;
 }
 
 .sky{

@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  window.solidDancers = [];
 
   var sky = new DynamicBG();
 
