@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-color:#000000;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -36,3 +36,35 @@ body, a:link, a:visited, a:active{
   border:30px solid yellow;
   border-radius:30px;
 }
+
+.sky{
+  height: 72%;
+  width: 100%;
+  position: fixed;
+  background: linear-gradient(to bottom, hsl(180, 100%, 35%), hsl(180, 100%, 70%));
+} 
+
+.grass{
+  height: 28%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  background: linear-gradient(to top, hsl(120, 100%, 10%), hsl(120, 100%, 40%));
+}
+
+.grass-background{
+  height: 22%;
+  background-color: #33cc33;
+}
+
+.grass-midground{
+  height: 20%;
+  background-color: #009933;
+}
+
+.grass-foreground{
+  height: 14%;
+  background-color: #003300;
+}
+
