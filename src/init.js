@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   var sky = new DynamicBG();
 
-  $('body').append(sky.$node);
+  //$('body').append(sky.$node);
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
