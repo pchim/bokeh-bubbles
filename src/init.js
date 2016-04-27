@@ -2,9 +2,30 @@ $(document).ready(function() {
   window.dancers = [];
   window.solidDancers = [];
 
-  var sky = new DynamicBG();
-
+  // var sky = new DynamicBG();
   //$('body').append(sky.$node);
+
+  var numAudio = '0';
+  // var audioTag = '<audio>'+
+  //   '<source src=\"http://www.jewelbeat.com/free/free-sound-effects/musical%20effects/'+
+  //   'Synth%20Choir%20-%2'+ numAudio +'.mp3\"></source></audio>';
+  for (var i = 1; i < 9; i++){
+    numAudio = '0' + i.toString();
+    var audioTag = '<audio class=\"sounds\">'+
+    '<source src=\"http://www.jewelbeat.com/free/free-sound-effects/musical%20effects/'+
+    'Synth%20Choir%20-%2'+ numAudio +'.mp3\"></source></audio>';
+    var audioNode = $(audioTag);
+    $('body').append(audioNode);
+  }
+
+  var conductor = new ConductorDancer(
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      Math.random() * 50
+    );
+    window.dancers.push(conductor);
+    $('body').append(conductor.$node);
+
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -44,5 +65,7 @@ $(document).ready(function() {
       dancer.setPosition(mid, i * horizPos);
     }
   });
+
+
 });
 

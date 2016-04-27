@@ -3,6 +3,7 @@ var CollidingColorDancer = function(top, left, timeBetweenSteps){
 	this.colors = ['blue', 'red', 'yellow', 'green', 'white'];
 	this.colorIndex = Math.floor(Math.random()*this.colors.length)
 	this.color = this.colors[this.colorIndex];
+  this.radius = 100;
 
 };
 
