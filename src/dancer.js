@@ -13,9 +13,18 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.grow = true;
   this.step();
 
+  this.size = Math.random() * 50 + 200;
+  this.$node.css({
+    height: this.size,
+    width: this.size,
+    'border-radius': this.size,
+  });
+
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body
   this.setPosition(top, left);
+  this.center = [this.top+(this.size/2), this.left+(this.size/2)];
+  console.log(this.size);
 
 };
 
@@ -36,6 +45,7 @@ makeDancer.prototype.step = function() {
   this.top += this.topVelocity;
   this.left += this.leftVelocity;
 
+  this.center = [this.top+(this.size/2), this.left+(this.size/2)];
   this.setPosition(this.top, this.left);
   setTimeout(this.step.bind(this), this._timeBetweenSteps);
 };
@@ -53,25 +63,23 @@ makeDancer.prototype.setPosition = function(top, left) {
   this.$node.css(styleSettings);
 };
 
-makeDancer.prototype.changeSize = function(){
-  
-  if (this.radius <= 50 && this.grow){
-    this.radius += this.growthSpeed;  
-  } else if (this.radius > 50){
-    this.grow = false;
-  }
+// check collisions
+makeDancer.prototype.checkCollision = function(OtherDancer) {
+  var xDistance = this.center[1] - OtherDancer.center[1];
+  var yDistance = this.center[0] - OtherDancer.center[0];
+  var maxDistance = (this.size/2) + (OtherDancer.size/2);
 
-  if (!this.grow){
-    this.radius -= this.growthSpeed;
+  var totalDistance = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
+  if (totalDistance < maxDistance) {
+    console.log(totalDistance, ' ', maxDistance);
+    return true;
+  } else {
+    return false;
   }
-  if (this.radius <= 30){
-    this.grow = true;  
-  }
-
-
-  var styleSettings = {
-    'border-width': this.radius,
-    'border-radius': this.radius
-  };
-  this.$node.css(styleSettings);
 };
+
+
+
+
+
+

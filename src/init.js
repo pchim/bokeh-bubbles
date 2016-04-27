@@ -1,6 +1,7 @@
 $(document).ready(function() {
   window.dancers = [];
   window.solidDancers = [];
+  window.playing = null;
 
   // var sky = new DynamicBG();
   //$('body').append(sky.$node);

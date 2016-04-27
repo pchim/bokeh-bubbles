@@ -32,26 +32,16 @@ MusicDancer.prototype.step = function() {
 	    if (this !== window.dancers[i] && this.checkCollision(window.dancers[i])) {
 	      if (window.dancers[i].conductor){	    	
 	    	  if (audio.paused){
-	    	  	this.$node.css({opacity: 0.3});
-	    	 	  audio.play();
-	    	  } else {
 	    	  	this.$node.css({opacity: 0.6});
-	     	    audio.pause();
-	        }
+	    	 	  audio.play();
+	    	  }
+	      } else {
+	      		this.$node.css({opacity: 0.3});
+	    	 	  audio.pause();
 	      }
   	  }
   }
+
 };
 
-MusicDancer.prototype.checkCollision = function(OtherDancer) {
-  var xDistance = this.left - OtherDancer.left;
-  var yDistance = this.top - OtherDancer.top;
-
-  var totalDistance = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
-  if (totalDistance < 100) {
-    return true;
-  } else {
-    return false;
-  }
-};
 

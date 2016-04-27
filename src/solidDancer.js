@@ -3,16 +3,17 @@ var SolidDancer = function(top, left, timeBetweenSteps){
   this.$node.addClass('solid-dancer');
   //blue,red,green
   this.colors = ['#4993E2', '#EC3630', '#6AD97E'];
-  var size = Math.random() * 10 + 70;
+  this.size = Math.random() * 10 + 70;
   var currentColor = this.colors[Math.floor(Math.random() * 3)];
   this.$node.css({
     'color': currentColor,
     'background-color': currentColor,
-    height: size,
-    width: size,
-    'border-raidus': size,
+    height: this.size,
+    width: this.size,
+    'border-raidus': this.size,
   });
   window.solidDancers.push(this);
+  console.log(this.size);
 };
 
 SolidDancer.prototype = Object.create(makeDancer.prototype);
